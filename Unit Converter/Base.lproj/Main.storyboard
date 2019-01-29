@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°F" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqK-hF-6Ju">
-                                <rect key="frame" x="171" y="95" width="33.5" height="42"/>
+                                <rect key="frame" x="171" y="70" width="33.5" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -30,14 +30,30 @@
                                     <outlet property="dataSource" destination="CCA-cY-y7e" id="awr-cg-vjA"/>
                                 </connections>
                             </pickerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wsv-xj-QZh">
+                                <rect key="frame" x="116" y="152" width="143" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Zod-aN-CNY"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Farenheit"/>
+                                    <segment title="Celcius"/>
+                                </segments>
+                                <color key="tintColor" red="0.38345014301082969" green="0.34503827145491983" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="rgJ-Wn-6G5"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xZH-PH-GsJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7UW-zc-Dll"/>
                             <constraint firstItem="xZH-PH-GsJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8gW-Sa-qQ0"/>
                             <constraint firstItem="NqK-hF-6Ju" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9kv-XY-Zmo"/>
+                            <constraint firstItem="Wsv-xj-QZh" firstAttribute="top" secondItem="NqK-hF-6Ju" secondAttribute="bottom" constant="40" id="COj-r9-qEk"/>
                             <constraint firstItem="xZH-PH-GsJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EAJ-Hq-ODS"/>
-                            <constraint firstItem="NqK-hF-6Ju" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="SxH-5w-Dfd"/>
+                            <constraint firstItem="NqK-hF-6Ju" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="SxH-5w-Dfd"/>
+                            <constraint firstItem="Wsv-xj-QZh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nBO-oB-LPm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -45,11 +61,13 @@
                         <outlet property="tempLabel" destination="NqK-hF-6Ju" id="4cR-ci-Ex5"/>
                         <outlet property="tempPicker" destination="xZH-PH-GsJ" id="CM7-p8-Cxh"/>
                         <outlet property="temperatureRange" destination="CCA-cY-y7e" id="2C3-5H-ci7"/>
+                        <outlet property="uiSegmentedControl" destination="Wsv-xj-QZh" id="XVB-dY-zNa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="CCA-cY-y7e" userLabel="TemperatureRange" customClass="TemperatureRange" customModule="Unit_Converter" customModuleProvider="target"/>
             </objects>
+            <point key="canvasLocation" x="128.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
